@@ -21,13 +21,12 @@ jobs:
         with:
           egress-policy: audit
 
-      - uses: actions/checkout
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 1
 
       - uses: hashicorp/setup-terraform@17d4c9b8043b238f6f35641cdd8433da1e6f3867 # tag:v2
-      
+
       - name: Lint Terraform
         run: terraform fmt -recursive -check
         working-directory: v2/internal/attacktechniques
-        
